@@ -46,7 +46,7 @@ var m = {
 	function getImageMimeType(imgurl, userdata) {
 		return new Promise(function(resolve, reject) {
 			var xhr = new XMLHttpRequest();
-			xhr.open("GET", "http://crossorigin.me/" + imgurl, true);
+			xhr.open("GET", "https://atcors.herokuapp.com/" + imgurl, true);
 			xhr.onload = function() {
 				clearTimeout(tAbort);
 				if (xhr.status == 200) {
