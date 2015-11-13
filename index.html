@@ -73,16 +73,22 @@
         </div>
 
         <h3>Start full screen?</h3>
-        <p>Sites served over <code>https</code> can start fullscreen. Check the box to tell Android to start your site full-screen like any other app.</p>
+        <p>Sites served over <code>https</code> can start full-screen. You can tell Android to start your site full-screen like any other app, or in “true fullscreen” like a game, hiding everything but your app.</p>
 <!--
 
         <p>Insecure <code>http</code>-only sites can’t start full screen (because it’s a security risk; hackers could, for example, spoof a bank site.) Therefore, they start in a browser so the user can always see the real address. In this case, the checkbox is disabled.</p>
 
 -->
 
-        <div>
-            <label>Fullscreen?
-                <input type="checkbox" name="fullscreen">
+        <div class="fullscreen">
+            <label><strong>Standalone</strong> (Show operating system features such as the top bar, but not browser features such as an address bar or back buttons. Good for utility applications.)
+                <input type="radio" name="fullscreen" id="display-standalone" checked value="standalone">
+            </label>
+            <label><strong>Really fullscreen?</strong> (Good for games.)
+                <input type="radio" name="fullscreen" id="display-fullscreen" value="fullscreen">
+            </label>
+            <label><strong>Show as a browser</strong> (Show all browser features such as the address bar.)
+                <input type="radio" name="fullscreen" id="display-browser" value="browser">
             </label>
         </div>
 

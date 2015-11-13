@@ -377,3 +377,7 @@ footer {
 	padding-bottom: 75px;
 	background: url(logo.png) center bottom no-repeat;
 }
+
+div.fullscreen label {
+	display: block;
+}

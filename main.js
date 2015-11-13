@@ -119,7 +119,7 @@ var m = {
 		document.querySelector("pre").classList.remove("pong-loader");
 	}
 
-	var cbFullscreen = document.querySelector("[name=fullscreen]");
+	var rFullscreens = Array.prototype.slice.call(document.querySelectorAll("[name=fullscreen]"));
 	function updateUserSelections() {
 		var errors = [];
 		manifest.orientation = document.querySelector("[name=orientation]:checked").value;
@@ -131,10 +131,7 @@ var m = {
 		if (manifest.short_name.length > 12) {
 			errors.push("Warning: short_name should be 12 characters or less");
 		}
-		delete manifest.fullscreen;
-		if (cbFullscreen.checked) {
-			manifest.display = "fullscreen";
-		}
+		manifest.display = rFullscreens.filter(function(f) { return f.checked; })[0].value;
 		return errors;
 	}
 
@@ -218,15 +215,6 @@ var m = {
 				display(updateUserSelections());
 			}
 		}, false);
-	});
-	var textUrl = document.querySelector("[name=url]");
-	textUrl.addEventListener("input", function(e) {
-		if (textUrl.value.match(/^https:/)) {
-			cbFullscreen.disabled = false;
-		} else {
-			cbFullscreen.checked = false;
-			cbFullscreen.disabled = true;
-		}
 	});
 
 	document.getElementById("dl").addEventListener("click", setDownloadUrl, false);
