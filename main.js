@@ -35,11 +35,6 @@ var m = {
 
 (function() {
 
-	if (location.href.match(/^https:/)) {
-		location.href = location.href.replace(/^https:/, "http:");
-		return;
-	}
-
 	var manifest;
 	if (!window.URL && window.webkitURL) window.URL = window.webkitURL;
 
