@@ -35,18 +35,13 @@ var m = {
 
 (function() {
 
-	if (location.href.match(/^https:/)) {
-		location.href = location.href.replace(/^https:/, "http:");
-		return;
-	}
-
 	var manifest;
 	if (!window.URL && window.webkitURL) window.URL = window.webkitURL;
 
 	function getImageMimeType(imgurl, userdata) {
 		return new Promise(function(resolve, reject) {
 			var xhr = new XMLHttpRequest();
-			xhr.open("GET", "http://crossorigin.me/" + imgurl, true);
+			xhr.open("GET", "https://crossorigin.me/" + imgurl, true);
 			xhr.onload = function() {
 				clearTimeout(tAbort);
 				if (xhr.status == 200) {
