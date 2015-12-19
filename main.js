@@ -182,9 +182,7 @@ var m = {
 	function get(url) {
 		console.log("fetching...");
 		var xhr = new XMLHttpRequest();
-		// TODO: https://github.com/technoboy10/crossorigin.me/issues/14
-		// Alternatively, find a CORS proxy that works over HTTPS.
-		xhr.open("GET", "http://crossorigin.me/" + url, true);
+		xhr.open("GET", "https://crossorigin.me/" + url, true);
 		xhr.onload = function() {
 			if (xhr.status == 200) {
 				parse(xhr.responseText);
