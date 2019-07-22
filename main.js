@@ -41,7 +41,7 @@ var m = {
 	function getImageMimeType(imgurl, userdata) {
 		return new Promise(function(resolve, reject) {
 			var xhr = new XMLHttpRequest();
-			xhr.open("GET", "https://crossorigin.me/" + imgurl, true);
+			xhr.open("GET", "https://cors-anywhere.herokuapp.com/" + imgurl, true);
 			xhr.onload = function() {
 				clearTimeout(tAbort);
 				if (xhr.status == 200) {
@@ -182,7 +182,7 @@ var m = {
 	function get(url) {
 		console.log("fetching...");
 		var xhr = new XMLHttpRequest();
-		xhr.open("GET", "https://crossorigin.me/" + url, true);
+		xhr.open("GET", "https://cors-anywhere.herokuapp.com/" + url, true);
 		xhr.onload = function() {
 			if (xhr.status == 200) {
 				parse(xhr.responseText);
